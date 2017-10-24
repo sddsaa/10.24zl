@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--
+       v-if
+           根据表达式的值的真假条件渲染元素。在切换时元素及它的数据绑定 / 组件被销毁并重建
+           第一次:true :创建 false :销毁
+       v-else-if
+           前一兄弟元素必须有 v-if 或 v-else-if
+
+       v-else
+           前一兄弟元素必须有 v-if 或 v-else-if
+
+       v-show:切换标签的display
+           true 显示
+           false 隐藏
+   -->
+
+        <div v-if="type === 'A'">
+            A
+        </div>
+        <div v-else-if="type === 'B'">
+            B
+        </div>
+        <div v-else-if="type === 'C'">
+            C
+        </div>
+        <div v-else>
+            Not A/B/C
+        </div>
+
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                type:'C'
+
+            }
+        })
+    </script>
+</body>
+</html>

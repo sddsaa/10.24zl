@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+     <!--
+        v-on 可以绑定事件
+        缩写:@
+        绑定事件监听器。事件类型由参数指定。表达式可以是一个方法的名字或一个内联语句，如果没有修饰符也可以省略
+        绑定键盘 使用 @keydown.keycode
+        阻止默认事件失败
+        可以绑定所有原生JS的所有事件
+
+
+        支持不带参数绑定 一个事件/监听器键值对的对象??????????
+        注意当使用对象语法时，是不支持任何修饰器的。????? 什么是对象语法
+    -->
+        <!--<input type="text" @keydown.40 = 'down' v-model="get">-->
+        <input type="text"  @click.prevent='down' v-model="get">
+
+
+    </div>
+
+
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                get:''
+            },
+            methods:{
+                down:function ($event) {
+                    console.log(this.get);
+                }
+            }
+
+
+
+        })
+
+
+    </script>
+
+
+</body>
+</html>

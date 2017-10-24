@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--1.{{}} 文本插值 可以用来拼接字符串 改变的是textcontent的部分-->
+    <p>{{model}}</p>
+
+    <!--2.v-text:赋值给textContent 将textContent全部覆盖掉-->
+    <p v-text="message">{{message}}</p>
+    <!--更新元素的 textContent使用v-text。如果要更新部分的 textContent ，需要使用 {{ Mustache }} 插值-->
+
+    <!--3.v-html:展示HTML的代码 接受写好的一段html代码-->
+    <p v-html="html"></p>
+
+    <!--4.v-bind:单项数据绑定 可以绑定属性 例如:type value src 等等-->
+    <!--缩写 :   -->
+    <input :type="tp" :value="de">
+
+    <!--5.v-model:双向数据绑定 绑定input -->
+    <input type="text" v-model="model">
+
+</div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            de:'点击',
+            tp:'button',
+            model:'',
+            message:'阿斯顿',
+            html:'<h1>我是html</h1>',
+            box:'box',
+            username:''
+        },
+    });
+
+
+</script>
+</body>
+</html>
